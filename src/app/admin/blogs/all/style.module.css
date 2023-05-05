@@ -1,0 +1,13 @@
+.buttons {
+  margin: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button {
+  color: white;
+  background: rgb(0, 38, 255);
+
+  padding: 5px 10px;
+  font-size: 2rem;
+}

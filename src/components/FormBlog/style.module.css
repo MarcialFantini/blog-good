@@ -1,0 +1,86 @@
+.form {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 30px;
+  padding: 0 10px;
+}
+
+.form label {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.textLabel {
+  font-size: 2.4rem;
+  margin: 5px auto;
+}
+
+.input {
+  width: 90%;
+  margin: 0;
+  padding: 5px;
+  font-size: 1.4rem;
+  min-height: 40px;
+}
+
+.btn {
+  transition: all 0.3s;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  color: white;
+  background: rgb(0, 47, 255);
+  font-size: 2rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.textArea {
+  min-height: 100px;
+  max-width: 90%;
+  min-width: 90%;
+}
+
+.states {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.state {
+  transition: all 0.3s;
+
+  padding: 10px;
+  color: white;
+  font-size: 2rem;
+  margin: 10px 0 10px 10px;
+  border-radius: 10px;
+}
+
+.fetching {
+  background: rgba(170, 118, 20, 0.5);
+}
+.fetchingActive {
+  background: rgba(170, 118, 20);
+}
+
+.ok {
+  background: rgba(0, 128, 0, 0.5);
+}
+
+.okActive {
+  background: rgba(0, 128, 0);
+}
+
+.noOk {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+.noActive {
+  background: rgba(255, 0, 0);
+}

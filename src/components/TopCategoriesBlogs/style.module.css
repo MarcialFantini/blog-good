@@ -1,0 +1,19 @@
+.containerTop {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10%;
+}
+
+.gridGreat {
+  display: grid;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid {
+  margin: 10px 0;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}

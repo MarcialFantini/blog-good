@@ -1,0 +1,40 @@
+/* style.module.css */
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+}
+
+.title {
+  margin: auto;
+  font-size: 3.2rem;
+  color: #007bff;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  font-size: 1.6rem;
+  width: 100%;
+}
+
+.input {
+  font-size: 1.6rem;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.button {
+  width: 100%;
+  font-size: 2rem;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

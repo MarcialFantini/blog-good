@@ -1,0 +1,14 @@
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.del {
+  background: red;
+}
+.update {
+  background: blue;
+}

@@ -1,0 +1,54 @@
+.containerBlog {
+  width: 90%;
+  height: 90%;
+
+  margin: 0px auto;
+
+  padding: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: white;
+}
+
+.containerBlog picture {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.img {
+  width: auto;
+  height: 100%;
+}
+
+.textContainer {
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.containerBlog h2 {
+  font-size: 1.6rem;
+}
+
+.containerBlog p {
+  font-size: 1.3rem;
+  color: gray;
+}
+
+.readArticle {
+  cursor: pointer;
+  font-size: 1.6rem;
+  padding: 10px;
+  font-weight: bold;
+  background: linear-gradient(to right, red, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+}

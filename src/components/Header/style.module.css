@@ -1,0 +1,103 @@
+.containerHeader {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  background: rgb(37, 34, 65);
+
+  padding: 0 5%;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10% 0;
+  padding-right: 30%;
+  max-height: 600px;
+}
+
+.textContainer p {
+  font-size: 1.6rem;
+  color: gray;
+}
+
+.textContainer h2 {
+  font-size: 4rem;
+  color: white;
+}
+
+.textContainer button {
+  cursor: pointer;
+
+  font-size: 2rem;
+  padding: 10px 0;
+
+  color: white;
+  border: none;
+
+  background: rgb(240, 5, 5);
+  background: linear-gradient(
+    90deg,
+    rgba(240, 5, 5, 1) 0%,
+    rgba(219, 6, 6, 1) 29%,
+    rgba(255, 149, 0, 1) 100%
+  );
+}
+
+.imageContainer {
+  position: relative;
+
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.picture {
+  position: relative;
+
+  z-index: 5;
+
+  height: 90%;
+  width: 70%;
+
+  margin: auto 0 auto auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: start;
+  overflow: hidden;
+
+  border-radius: 0 0 0 40%;
+}
+
+.imageContainer::before {
+  content: "";
+  position: absolute;
+  height: 20%;
+  aspect-ratio: 1;
+  background: rgb(255, 79, 67);
+  border-radius: 50%;
+  top: 10%;
+  left: 17%;
+  z-index: 0;
+}
+
+.imageContainer::after {
+  content: "";
+  position: absolute;
+  height: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+
+  left: 15%;
+  bottom: 50%;
+  z-index: 10;
+}
+
+.imgHeader {
+  height: auto;
+  width: 100%;
+}

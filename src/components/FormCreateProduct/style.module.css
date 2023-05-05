@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 800px;
+
+  margin: auto;
+
+  gap: 10px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 2rem;
+}
+
+.form label input {
+  padding: 10px;
+  font-size: 1.6rem;
+}
+
+.form button {
+  color: white;
+  background: rgb(30, 30, 247);
+  border: none;
+
+  padding: 10px;
+
+  font-size: 2rem;
+}

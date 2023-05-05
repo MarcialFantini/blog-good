@@ -1,0 +1,12 @@
+.containerRowBlog {
+  margin: 40px 0;
+  padding: 0 2%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: center;
+  justify-items: center;
+  gap: 30px;
+}

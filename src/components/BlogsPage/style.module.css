@@ -1,0 +1,33 @@
+.table {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+
+  background: black;
+  backdrop-filter: blur(10px);
+  border: 1px solid black;
+}
+
+.table thead {
+  background: rgb(19, 19, 224);
+  color: white;
+  font-size: 2rem;
+
+  border: 1px solid black;
+}
+
+.table tbody {
+  font-size: 1.6rem;
+}
+
+.table tbody tr {
+  background: white;
+}
+
+.table tbody tr td button {
+  width: auto;
+  padding: 10px;
+  font-size: 1.2rem;
+  color: white;
+  border: none;
+}

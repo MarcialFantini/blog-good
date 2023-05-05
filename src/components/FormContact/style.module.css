@@ -1,0 +1,52 @@
+.formContact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  padding: 0 10%;
+}
+
+.formContact label {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+}
+
+.formContact label input {
+  margin: 10px 0;
+  font-size: 2rem;
+  border: 1px solid rgba(128, 128, 128, 0.219);
+  padding: 10px;
+}
+
+.formContact label textarea {
+  max-width: 100%;
+  margin: 10px 0;
+  font-size: 2rem;
+  border: 1px solid rgba(128, 128, 128, 0.219);
+  padding: 10px;
+}
+
+.formContact button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff; /* Color de texto en blanco */
+  background-image: linear-gradient(
+    to right,
+    #ff3d3d,
+    #ff9a3d
+  ); /* Degradado de colores */
+  border: none; /* Sin borde */
+  border-radius: 30px; /* Bordes redondeados */
+  cursor: pointer;
+  /* Transición para suavizar el efecto de hover */
+  transition: all 0.3s ease;
+}
+
+.formContact button:hover {
+  color: black;
+  background-image: linear-gradient(to right, #ff9a3d, #ff3d3d);
+}

@@ -1,0 +1,7 @@
+.gridBlogs {
+  min-height: 200px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  padding: 0 10%;
+}

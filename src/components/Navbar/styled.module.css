@@ -1,0 +1,104 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  align-items: center;
+
+  background: rgb(37, 34, 65);
+  min-height: 80px;
+}
+
+.titleNavbar {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.listLink {
+  display: flex;
+  flex-direction: row;
+
+  gap: 10px;
+
+  font-size: 1.4rem;
+
+  padding: 0;
+
+  transition: all 0.3s;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.link:hover {
+  color: #ff4f43;
+}
+
+.button {
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+
+  transition: all 0.3s;
+
+  border: transparent solid 1px;
+  border-radius: 10px;
+
+  padding: 5px;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  border: #ff4f43 solid 1px;
+}
+
+.btnActive {
+  display: none;
+  color: white;
+  background: transparent;
+  border: 1px solid transparent;
+  font-size: 2rem;
+}
+
+.activeNavbar {
+  right: 0;
+}
+
+.noActiveNavbar {
+  right: -100%;
+}
+
+@media (max-width: 800px) {
+  .listLink {
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+
+    position: fixed;
+
+    bottom: -15px;
+
+    background: #252241;
+    height: 100vh;
+
+    z-index: 100;
+  }
+  .btnActive {
+    display: flex;
+  }
+}
