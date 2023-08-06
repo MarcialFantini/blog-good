@@ -1,0 +1,36 @@
+.button {
+  color: black;
+
+  padding: 10px 0;
+
+  width: 100%;
+  height: auto;
+
+  font-size: 1.2rem;
+
+  border: none;
+  transition: all 0.3s;
+
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: white;
+}
+
+.more {
+  background: rgba(0, 128, 0, 0.5);
+}
+
+.more:hover {
+  background: rgba(0, 128, 0);
+}
+
+.less {
+  background: rgba(255, 14, 14, 0.5);
+}
+
+.less:hover {
+  background: rgba(255, 14, 14);
+}

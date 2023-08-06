@@ -2,11 +2,7 @@ import FormCreateProduct from "@/components/FormCreateProduct";
 import React from "react";
 
 function CreatePage() {
-  return (
-    <div>
-      <FormCreateProduct></FormCreateProduct>
-    </div>
-  );
+  return <FormCreateProduct></FormCreateProduct>;
 }
 
 export default CreatePage;

@@ -2,13 +2,13 @@ import React from "react";
 
 import style from "./style.module.css";
 import Image from "next/image";
-import { Message } from "@/Interfaces/LastBlogs";
+import { MessageBlog } from "@/Interfaces/LastBlogs";
 import Link from "next/link";
 
 import imgDefault from "../../public/images/contact/contacts.jpg";
 
 interface props {
-  item: Message;
+  item: MessageBlog;
   content?: boolean;
 }
 
@@ -35,7 +35,7 @@ export function BlogOne({ item, content }: props) {
       <h3 className={style.titleBlog}>{item.title}</h3>
       {!content ? <p className={style.text}>{item.content}</p> : ""}
 
-      <Link className={style.Link} href={"/"}>
+      <Link className={style.Link} href={`/blog/${item.id}`}>
         <button className={style.Button}>Read Article </button>
       </Link>
     </div>

@@ -1,0 +1,26 @@
+.containerItem {
+  width: 100%;
+  height: auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: center;
+  justify-items: center;
+
+  background: rgba(179, 245, 242, 0.295);
+  margin: 5px 0;
+}
+
+.containerItem button {
+  border: none;
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  transition: all 0.3s;
+
+  cursor: pointer;
+}
+.containerItem button:hover {
+  background: red;
+  color: white;
+}

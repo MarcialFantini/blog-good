@@ -1,0 +1,57 @@
+.containerHeaderBlog {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  width: 95%;
+  height: auto;
+  margin: 20px auto;
+
+  position: relative;
+}
+
+.containerImageBlogHeader {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 80%;
+  aspect-ratio: 6/2;
+  margin: auto 0 auto auto;
+}
+
+.imageBlog {
+  width: 100%;
+  height: auto;
+}
+
+.containerText {
+  position: absolute;
+  left: 5%;
+
+  width: 50%;
+  min-height: 60%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background: white;
+}
+
+.containerHeaderBlog button {
+  width: 80%;
+  padding: 10px;
+  font-size: 1.2rem;
+  color: white;
+  background: rgb(33, 47, 255);
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.containerHeaderBlog button:hover {
+  color: black;
+  background: rgb(33, 47, 255, 0.2);
+}

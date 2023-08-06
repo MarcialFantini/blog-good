@@ -1,0 +1,14 @@
+.table {
+  width: 95%;
+
+  background: rgb(190, 188, 188);
+  color: black;
+  gap: 1px;
+  border: 1px solid white;
+  margin: 20px auto;
+}
+
+.th {
+  background: white;
+  font-size: 2rem;
+}

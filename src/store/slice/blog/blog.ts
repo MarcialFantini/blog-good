@@ -1,6 +1,11 @@
 import { Blog } from "@/components/FormBlog";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { createBlogThunk, delBlogThunk, getBlogThunk } from "./thunksBlogs";
+import {
+  createBlogThunk,
+  delBlogThunk,
+  getBlogThunk,
+  updateBlog,
+} from "./thunksBlogs";
 import { pageBlog } from "@/app/admin/blogs/all/page";
 
 interface InitialState {
@@ -10,6 +15,22 @@ interface InitialState {
   isFetchingOk: boolean;
   endFetch: boolean;
   pageBlog: pageBlog[];
+  isModifique: boolean;
+  addImg: boolean;
+  blogIdSelected: number;
+  blogSelected: {
+    id: number;
+    title: string;
+    content: string;
+    author: string;
+    published: boolean;
+    category: string;
+    createdAt: string;
+    updatedAt: string;
+    Likes: never[];
+    Comments: never[];
+    ImagesModels: never[];
+  };
 }
 
 const initialState: InitialState = {
@@ -19,6 +40,22 @@ const initialState: InitialState = {
   operation: "",
   isFetchingOk: false,
   endFetch: false,
+  isModifique: false,
+  addImg: false,
+  blogIdSelected: 0,
+  blogSelected: {
+    id: 0,
+    title: "",
+    content: "",
+    author: "",
+    published: false,
+    category: "",
+    createdAt: "",
+    updatedAt: "",
+    Likes: [],
+    Comments: [],
+    ImagesModels: [],
+  },
 };
 
 const blogSlice = createSlice({
@@ -30,6 +67,31 @@ const blogSlice = createSlice({
       state.isFetching = false;
       state.isFetchingOk = false;
     },
+    updateToggle: (state) => {
+      state.isModifique = !state.isModifique;
+    },
+    addImgToggle: (state, action: PayloadAction<number>) => {
+      state.addImg = !state.addImg;
+      state.blogIdSelected = action.payload;
+    },
+    selectBlog: (
+      state,
+      action: PayloadAction<{
+        id: number;
+        title: string;
+        content: string;
+        author: string;
+        published: boolean;
+        category: string;
+        createdAt: string;
+        updatedAt: string;
+        Likes: never[];
+        Comments: never[];
+        ImagesModels: never[];
+      }>
+    ) => {
+      state.blogSelected = action.payload;
+    },
   },
   extraReducers: (build) => {
     build.addCase(createBlogThunk.pending, (state) => {
@@ -39,6 +101,7 @@ const blogSlice = createSlice({
       state.isFetching = false;
       state.isFetchingOk = true;
       state.endFetch = true;
+      state.blogIdSelected = action.payload;
     });
     build.addCase(createBlogThunk.rejected, (state, action) => {
       state.isFetching = false;
@@ -74,9 +137,16 @@ const blogSlice = createSlice({
         (item) => item.id !== actions.payload.id
       );
     });
+    build.addCase(updateBlog.fulfilled, (state, action) => {
+      const index = state.pageBlog.findIndex(
+        (state) => state.id === action.payload.id
+      );
+      state.pageBlog[index] = { ...action.payload.blogUpdate };
+    });
   },
 });
 
 export const blogReducer = blogSlice.reducer;
 
-export const { restore } = blogSlice.actions;
+export const { restore, updateToggle, selectBlog, addImgToggle } =
+  blogSlice.actions;

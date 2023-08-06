@@ -1,0 +1,29 @@
+.tr td {
+  text-align: center;
+  font-size: 1.5rem;
+}
+.del {
+  padding: 10px 20px;
+  border-radius: 10%;
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.update {
+  padding: 10px 20px;
+  border-radius: 10%;
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.update:hover {
+  background: rgb(3, 133, 255);
+  color: white;
+}
+
+.del:hover {
+  background: rgb(255, 3, 3);
+  color: white;
+}

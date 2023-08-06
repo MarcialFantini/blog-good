@@ -5,6 +5,11 @@ import { pageBlog } from "@/app/admin/blogs/all/page";
 import style from "./style.module.css";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { delBlogThunk } from "@/store/slice/blog/thunksBlogs";
+import {
+  addImgToggle,
+  selectBlog,
+  updateToggle,
+} from "@/store/slice/blog/blog";
 
 export function ItemBlog({ item }: { item: pageBlog }) {
   const token = useAppSelector((state) => state.login.token);
@@ -12,6 +17,16 @@ export function ItemBlog({ item }: { item: pageBlog }) {
 
   const handlerDelBlog = () =>
     dispatch(delBlogThunk({ id: item.id, token: token }));
+
+  const handlerUpdateForm = () => {
+    dispatch(selectBlog(item));
+
+    dispatch(updateToggle());
+  };
+
+  const handlerAddImg = () => {
+    dispatch(addImgToggle(item.id));
+  };
 
   return (
     <tr className={style["row"]}>
@@ -23,7 +38,12 @@ export function ItemBlog({ item }: { item: pageBlog }) {
         <button onClick={handlerDelBlog} className={style.del}>
           Del
         </button>
-        <button className={style.update}>Update</button>
+        <button onClick={handlerUpdateForm} className={style.update}>
+          Update
+        </button>
+        <button onClick={handlerAddImg} className={style.BtnImg}>
+          Add Image
+        </button>
       </td>
     </tr>
   );

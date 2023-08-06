@@ -1,10 +1,12 @@
 "use client";
 import { useFormHook } from "@/hooks/useFormHook";
-import React from "react";
+import React, { useState } from "react";
 
 import style from "./style.module.css";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { createProductThunk } from "@/store/slice/products/productSlice";
+import { useAppSelector } from "@/store/hooks";
+import { createProduct } from "@/store/slice/products/productSlice";
+import { saveProductImages } from "./sendImages";
+import { reset } from "@/store/slice/products/products";
 
 const initialState = {
   name: "",
@@ -14,16 +16,28 @@ const initialState = {
 
 export default function FormCreateProduct() {
   const { values, handlerOnChange, resetValues } = useFormHook(initialState);
+  const [newId, setNewId] = useState(0);
+  const [selectedFiles, setSelectedFiles] = useState<File[] | null>(null);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!event.target.files) {
+      return;
+    }
+    setSelectedFiles(Array.from(event.target.files));
+  };
 
   const token = useAppSelector((state) => state.login.token);
 
-  const dispatch = useAppDispatch();
   const handlerCreateProductForm = (
     event: React.FormEvent<HTMLFormElement>
   ) => {
     event.preventDefault();
-    dispatch(createProductThunk({ token, Product: values }));
-    resetValues(initialState);
+
+    if (selectedFiles) {
+      createProduct({ token, Product: values })
+        .then((data) => saveProductImages(`${data.message.id}`, selectedFiles))
+        .catch((err) => console.log(err));
+    }
   };
 
   return (
@@ -56,6 +70,9 @@ export default function FormCreateProduct() {
           name="price"
         />
       </label>
+
+      <input onChange={handleFileChange} type="file" name="images" multiple />
+
       <button type="submit">Submit</button>
     </form>
   );

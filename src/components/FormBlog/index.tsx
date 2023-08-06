@@ -26,10 +26,17 @@ const initialBlog: Blog = {
 };
 
 export default function FormBlog({ Blog }: Props) {
-  const { values, handlerOnChange, btnPublished, setValues, handleSubmit } =
-    customFormCreate(initialBlog);
+  const {
+    values,
+    handlerOnChange,
+    btnPublished,
+    setValues,
+    handleSubmit,
+    handleImageChange,
+    handleUpload,
+  } = customFormCreate(initialBlog);
 
-  const { isFetching, isFetchingOk, endFetch } = useAppSelector(
+  const { isFetching, isFetchingOk, endFetch, blogIdSelected } = useAppSelector(
     (state) => state.blog
   );
 
@@ -41,8 +48,11 @@ export default function FormBlog({ Blog }: Props) {
       setTimeout(() => {
         setValues(initialBlog);
         restoreHandler();
-        console.log(endFetch, isFetchingOk);
       }, 2000);
+    }
+
+    if (!isFetching && endFetch) {
+      handleUpload(blogIdSelected);
     }
   }, [endFetch]);
 
@@ -128,6 +138,9 @@ export default function FormBlog({ Blog }: Props) {
             type="text"
             name="category"
           />
+        </label>
+        <label>
+          <input type="file" multiple onChange={handleImageChange} />
         </label>
         <label>
           <button className={style.btn} type="submit">

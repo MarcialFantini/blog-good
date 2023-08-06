@@ -1,0 +1,64 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+
+  z-index: 1;
+}
+
+.form {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px 10px;
+
+  width: 90%;
+  max-width: 800px;
+
+  height: auto;
+
+  margin: auto;
+
+  background: rgba(255, 255, 255, 0.829);
+  backdrop-filter: 10px;
+
+  border-radius: 10px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  color: black;
+}
+
+.form label input,
+.form label textarea {
+  width: 100%;
+  height: auto;
+
+  padding: 10px;
+
+  font-size: 1.6rem;
+}
+
+.form label textarea {
+  min-height: 100px;
+}
+
+.form button {
+  padding: 10px;
+  color: white;
+  background: rgb(17, 48, 228);
+}

@@ -10,7 +10,7 @@ interface responseGetPage {
 }
 
 interface responseCreate {
-  message: string;
+  message: number;
 }
 
 interface responseDel {
@@ -33,10 +33,10 @@ export const createBlogThunk = createAsyncThunk(
 
       console.log(data);
 
-      if (data.message !== "created blog") {
+      if (typeof data.message !== "number") {
         throw new Error();
       }
-      return data;
+      return data.message;
     } catch (error) {
       return rejectWithValue("");
     }
@@ -85,6 +85,31 @@ export const delBlogThunk = createAsyncThunk(
       }
 
       return { id };
+    } catch (error) {
+      return rejectWithValue("");
+    }
+  }
+);
+
+export const updateBlog = createAsyncThunk(
+  "update-blog-thunk",
+  async (
+    { id, token, blogUpdate }: { id: number; token: string; blogUpdate: any },
+    { rejectWithValue }
+  ) => {
+    try {
+      const data = await fetchStandardCreator<{}, responseDel>(
+        `http://localhost:5000/api/v1/blogs/${id}`,
+        "PATCH",
+        blogUpdate,
+        token
+      );
+
+      if (data.message !== "updated blog") {
+        throw new Error();
+      }
+
+      return { id, blogUpdate };
     } catch (error) {
       return rejectWithValue("");
     }

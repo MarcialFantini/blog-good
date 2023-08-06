@@ -4,11 +4,21 @@
   justify-content: space-around;
   align-items: center;
   padding: 5px 0;
+  font-size: 1.6rem;
+
 }
 
 .del {
+  cursor: pointer;
   background: red;
 }
 .update {
+  cursor: pointer;
   background: blue;
+}
+
+.BtnImg{
+  cursor: pointer;
+  background: green;
+
 }
